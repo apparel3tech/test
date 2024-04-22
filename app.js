@@ -15,9 +15,9 @@ app.get('/' , (req , res)=>{
 // Route to send a response with cookies
 app.post("/", (req, res) => {
   res.cookie("username", "JohnDoe", {
-    httpOnly: true, //false when in local env
-    // secure: true,
-    // sameSite:"None",
+    // httpOnly: true, //false when in local env
+    secure: true,
+    sameSite:"None",
     expires: new Date(Date.now() + 3600000),
   });
   res.send({ a: "Cookies sent!" });
