@@ -17,7 +17,7 @@ app.post("/", (req, res) => {
   res.cookie("username", "JohnDoe", {
     httpOnly: true, //false when in local env
     secure: true,
-  
+    sameSite: "none",
     expires: new Date(Date.now() + 3600000),
   });
   res.send({ a: "Cookies sent!" });
