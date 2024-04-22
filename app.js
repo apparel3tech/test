@@ -19,6 +19,7 @@ app.post("/", (req, res) => {
     secure: true,
     sameSite:"None",
     expires: new Date(Date.now() + 3600000),
+    domain:'http://localhost:5173'
   });
   res.send({ a: "Cookies sent!" });
 });
