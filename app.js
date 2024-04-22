@@ -3,8 +3,8 @@ const app = express();
 const cors = require("cors");
 
 
-app.use(()=>console.log('Request'))
-app.use(cors({ origin: "*", credentials: true }));
+app.use(( b,a,next)=>{console.log('Request') , next()})
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 
 app.get('/' , (req , res)=>{
